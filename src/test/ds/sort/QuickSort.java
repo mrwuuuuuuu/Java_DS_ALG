@@ -15,7 +15,7 @@ public class QuickSort {
 	 * @param high
 	 * @return
 	 */
-	public static int partion(int[] arr,int low,int high){
+	private static int partion(int[] arr,int low,int high){
 		int privotKey=arr[low];//将数组的第一个元素设置为关键字。
 		while(low<high){//low<high进行循环操作
 			while(low<high&&arr[high]>=privotKey) high--;//从数组的尾部开始向前遍历，如果元素都比关键字大，下标high--
