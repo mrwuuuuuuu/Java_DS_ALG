@@ -9,7 +9,7 @@ public class MainFunction {
 //		int[] newArray=ShellSort.shellSort(oldArray);
 //		int[] newArray=QuickSort.quickSort(oldArray, 0, oldArray.length-1);
 //		int[] newArray=HeapSort.heapSort(oldArray);
-		int[] newArray=MergeSort.mergeSort(oldArray,0,oldArray.length-1);
+		int[] newArray=MergeSortTest.mergeSort(oldArray,0,oldArray.length-1);
 		System.out.print("排序的结果为:");
 		for(int i=0;i<newArray.length;i++){
 			System.out.print(oldArray[i]+"\t");
