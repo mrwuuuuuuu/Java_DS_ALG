@@ -2,7 +2,7 @@ package test.ds.sort;
 
 public class MainFunction {
 	public static void main(String[] args) {
-		int[] oldArray={49,38,65,97,76,13,27,49,88,98,108};
+		int[] oldArray={49,38,65,97,76,13,27,49,98,88,58,34};
 //		int[] newArray=InsertionSort.insertSort(oldArray);
 //		int[] newArray=SelectionSort.selectSort02(oldArray);
 //		int[] newArray=BubbleSort.bubbleSort01(oldArray);
