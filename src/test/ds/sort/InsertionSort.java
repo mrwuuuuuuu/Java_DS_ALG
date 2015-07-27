@@ -25,4 +25,18 @@ public class InsertionSort {
 		}
 		return arr;
 	}
+	
+	public static int[] insertSort01(int[] arr){
+		for(int i=1;i<arr.length;i++){
+			int j;
+			int temp=arr[i];
+			for(j=i-1;j>=0;j--){//每次需要比较当前已排好序的最后一个元素，与其后一位元素
+				if(temp<arr[j])
+				arr[j+1]=arr[j];
+				else break;
+			}
+			arr[j+1]=temp;
+		}
+		return arr;
+	}
 }
