@@ -8,14 +8,22 @@ public class TreeTest {
 		
 		sortTree.buildTree(arr);
 		
-		System.out.println("前序遍历：");
+		System.out.print("前序遍历：");
 		sortTree.preOrder();
+		System.out.print("非递归前：");
+		sortTree.preTraverse();
+		System.out.println();
 		
-		System.out.println("中序遍历");
+		System.out.print("中序遍历：");
 		sortTree.inOrder();
+		System.out.print("非递归中：");
+		sortTree.inTraverse();
+		System.out.println();
 		
-		System.out.println("后序遍历：");
+		System.out.print("后序遍历：");
 		sortTree.postOrder();
+		System.out.print("非递归后：");
+		sortTree.postTraverse();
 	}
 
 }

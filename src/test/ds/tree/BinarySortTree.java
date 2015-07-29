@@ -1,5 +1,7 @@
 package test.ds.tree;
 
+import java.util.Stack;
+
 public class BinarySortTree {
 	BinaryNode root;
 	
@@ -15,6 +17,7 @@ public class BinarySortTree {
 		
 		if(root==null){//如果根结点为空，则新建的结点为根结点
 			root=newNode;
+			return;
 		}
 		
 		BinaryNode current=root;//当前结点指向根结点
@@ -48,9 +51,7 @@ public class BinarySortTree {
 		}
 	}
 	
-	/**前序遍历
-	 * @param localRoot
-	 */
+	
 	public void preOrder(BinaryNode localRoot){
 		if(localRoot!=null){
 			System.out.print(localRoot.data+"\t");
@@ -58,13 +59,37 @@ public class BinarySortTree {
 			preOrder(localRoot.right);
 		}
 	}
-	public void preOrder(){
-		this.preOrder(root);
-	}
 	
-	/**中序遍历
+	/**递归前序遍历
 	 * @param localRoot
 	 */
+	public void preOrder(){
+		this.preOrder(root);
+		System.out.println();
+	}
+	
+	/**
+	 * 非递归前序遍历
+	 */
+	public void preTraverse(){
+		Stack<BinaryNode> stack =new Stack<BinaryNode> ();
+		
+		BinaryNode current=this.root;//初始时，指向根结点
+		
+		while(current!=null||!stack.isEmpty()){//当前结点不为空，或者栈不为空
+			if(current!=null){
+				System.out.print(current.data+"\t");//当前结点不为空，输出当前结点值
+				stack.push(current);//接着当前结点入栈
+				current=current.left;//进入左子树
+			}else {
+				current=stack.pop();//如果当前结点为空，弹出栈顶元素
+				current=current.right;//进入右子树
+			}
+		}
+		System.out.println();
+	}
+	
+	
 	public void inOrder(BinaryNode localRoot){
 		if(localRoot!=null){
 			inOrder(localRoot.left);
@@ -72,13 +97,36 @@ public class BinarySortTree {
 			inOrder(localRoot.right);
 		}
 	}
-	public void inOrder(){
-		this.inOrder(root);
-	}
 	
-	/**后序遍历
+	/**递归中序遍历
 	 * @param localRoot
 	 */
+	public void inOrder(){
+		this.inOrder(root);
+		System.out.println();
+	}
+	
+	/**
+	 * 非递归中序遍历
+	 */
+	public void inTraverse(){
+		Stack<BinaryNode> stack=new Stack<BinaryNode>();
+		BinaryNode current=this.root;
+		
+		while(current!=null||!stack.isEmpty()){
+			if(current!=null){
+				stack.push(current);//当前结点不为空，则入栈
+				current=current.left;//进入左子树
+			}else {
+				current=stack.pop();//当前结点为空，弹出栈顶元素
+				System.out.print(current.data+"\t");//输出栈顶元素
+				current=current.right;//进入右子树
+			}
+		}
+		System.out.println();
+	}
+	
+	
 	public void postOrder(BinaryNode localRoot){
 		if(localRoot!=null){
 			postOrder(localRoot.left);
@@ -86,8 +134,45 @@ public class BinarySortTree {
 			System.out.print(localRoot.data+"\t");
 		}
 	}
+	
+	/**递归后序遍历
+	 * @param localRoot
+	 */
 	public void postOrder(){
 		this.postOrder(root);
+		System.out.println();
+	}
+	
+	/**
+	 * 非递归后续遍历
+	 */
+	public void postTraverse(){
+		Stack<BinaryNode> stack=new Stack<BinaryNode>();
+		
+		BinaryNode current=this.root;
+		
+		while(current!=null||!stack.isEmpty()){
+			if(current!=null){
+				stack.push(current);
+				current=current.left;
+			}else {
+				current=stack.pop();
+				if(current.flag==1){//
+					System.out.print(current.data+"\t");
+					current.flag=2;
+				}
+				if(current.right==null&&current.flag==0){
+					System.out.print(current.data+"\t");
+					current.flag=2;
+				}
+				if(current.right!=null&&current.flag==0){
+					stack.push(current);
+					current.flag=1;
+				}
+				current=current.right;
+			}
+		}
+		System.out.println();
 	}
 
 }
