@@ -152,23 +152,25 @@ public class BinarySortTree {
 		BinaryNode current=this.root;
 		
 		while(current!=null||!stack.isEmpty()){
-			if(current!=null){
+			if(current!=null){//将根结点的左结点的左结点……存入栈
 				stack.push(current);
 				current=current.left;
 			}else {
-				current=stack.pop();
-				if(current.flag==1){//
+				current=stack.pop();//如当前结点没有左结点，则弹出栈顶元素并标记为当前结点
+				if(current.flag==1){//当前为回溯结点
 					System.out.print(current.data+"\t");
-					current.flag=2;
-				}
-				if(current.right==null&&current.flag==0){
-					System.out.print(current.data+"\t");
-					current.flag=2;
+					current.flag=2;//该结点已被弹出
 				}
 				if(current.right!=null&&current.flag==0){
 					stack.push(current);
-					current.flag=1;
+					current.flag=1;//表示为回溯结点
 				}
+				if(current.right==null&&current.flag==0){//当前结点右结点为空
+					System.out.print(current.data+"\t");
+					current.flag=2;//该结点已被弹出
+				}
+				
+				
 				current=current.right;
 			}
 		}
