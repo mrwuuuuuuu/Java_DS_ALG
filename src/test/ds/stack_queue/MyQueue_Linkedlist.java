@@ -1,10 +1,9 @@
 package test.ds.stack_queue;
 
 /**
- * 用单链表实现队列，需要指定头结点和尾结点。</br> 从尾部添加新结点，从头部弹出结点。</br>
- * 
+ * 用单链表实现队列，需要指定头结点和尾结点。</br> 
+ * 从尾部添加新结点，从头部弹出结点。</br>
  * @author lenovo
- * 
  */
 public class MyQueue_Linkedlist {
 	private Node head=null ;//指定头结点
