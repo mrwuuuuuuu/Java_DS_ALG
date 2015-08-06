@@ -16,10 +16,9 @@ public class MyStack_Linkedlist {
 			return top.data;
 		}
 		return null;
-		
 	}
 	
-	public Object pop(){
+	public Object pop(){//用链表头弹出数据
 		if(!isEmpty()){
 			Object data=peek();
 			top=top.next;
@@ -28,7 +27,7 @@ public class MyStack_Linkedlist {
 		return null;
 	}
 	
-	public boolean push(Object obj){
+	public boolean push(Object obj){//从链表头加入数据
 		Node newNode=new Node(obj);
 		newNode.next=top;
 		top=newNode;
