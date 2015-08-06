@@ -80,16 +80,16 @@ public class MyLinkedList {
 
 	/**
 	 * 对给定单链表排序，返回头结点
-	 * 
+	 * 使用了简单选择排序策略（只交换结点的值，不交换结点位置，curNode的值始终是当前最小值）
 	 * @return
 	 */
 	public Node orderList() {
-		Node nextNode = null;// 指定当前结点的下一个结点
 		Node curNode = head;// 指定当前结点
-		while (curNode.next != null) {
-			nextNode = curNode.next;
-			while (nextNode != null) {
-				if (curNode.data > nextNode.data) {
+		Node nextNode = null;// 指定当前结点的下一个结点
+		while (curNode.next != null) {//下个结点不为空
+			nextNode = curNode.next;//给下个结点赋值
+			while (nextNode != null) {//下个结点不为空
+				if (curNode.data > nextNode.data) {//只交换结点的值，curNode存储的值始终是当前最小值
 					int temp = curNode.data;
 					curNode.data = nextNode.data;
 					nextNode.data = temp;
@@ -100,6 +100,7 @@ public class MyLinkedList {
 		}
 		return head;
 	}
+
 
 	public void printList() {
 		Node tmp = head;
@@ -163,7 +164,8 @@ public class MyLinkedList {
 	}
 
 	/**
-	 * 8.1.4 如何实现单链表的反转 算法：当结点的的指针指向前驱时，后继结点的指针断掉了，需要用另外一个变量标明当前结点后继结点
+	 * 8.1.4 如何实现单链表的反转
+	 * 算法：当结点的的指针指向前驱时，后继结点的指针断掉了，需要用另外一个变量标明当前结点后继结点
 	 */
 	public void ReverseList() {
 		// 设置三个指针分别指向当前结点，当前结点的前驱，当前节点的后继
@@ -182,7 +184,8 @@ public class MyLinkedList {
 	}
 
 	/**
-	 * 8.1.5 如何从尾到头输出单链表 算法1：将链表的指针反转，改变链表的方向，然后从头到尾输出
+	 * 8.1.5 如何从尾到头输出单链表 
+	 * 算法1：将链表的指针反转，改变链表的方向，然后从头到尾输出
 	 * 算法2：从头到尾遍历链表，没经过一个结点，把该节点放到一个栈中，当遍历完整个链表后再次栈中弹出链表
 	 * 算法3：采用递归，没访问一个结点，先递归输出它后面的结点，在输出结点本身
 	 */
@@ -194,7 +197,8 @@ public class MyLinkedList {
 	}
 
 	/**
-	 * 8.1.6 如何寻找单链表的中间结点 算法1：先遍历单链表的长度n，然后遍历找到n/2即可找到单链表的中间结点
+	 * 8.1.6 如何寻找单链表的中间结点 
+	 * 算法1：先遍历单链表的长度n，然后遍历找到n/2即可找到单链表的中间结点
 	 * 算法2：有两个指针同时从头结点开始遍历，快指针一次走两部，慢指针一次走一步， 当快指针到链表的尾部时，慢指针正好指向链表的中间位置。
 	 * 
 	 * @return
@@ -208,5 +212,4 @@ public class MyLinkedList {
 		}
 		return slow;
 	}
-
 }
