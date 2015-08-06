@@ -1,8 +1,9 @@
 package test.ds.stack_queue;
 
 /**8.2.5如何使用连个栈模拟队列
+ * 入队：直接将数据入栈S1
+ * 出队：检查栈S2是否为空，为空直接将S1数据全部出栈入S2，接着从S2中弹出数据
  * @author lenovo
- *
  */
 public class MyQueueByTwoStack {
 	private MyStack_Linkedlist s1=new MyStack_Linkedlist();
