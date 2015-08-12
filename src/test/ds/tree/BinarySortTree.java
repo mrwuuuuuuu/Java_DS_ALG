@@ -1,6 +1,9 @@
 package test.ds.tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
+
 
 public class BinarySortTree {
 	BinaryNode root;
@@ -176,5 +179,32 @@ public class BinarySortTree {
 		}
 		System.out.println();
 	}
-
+	
+	/**
+	 * 二叉树的层序遍历
+	 */
+	public void layerTraverse(){
+		this.layerTraverse(root);
+	}
+	public void layerTraverse(BinaryNode root){
+		//如果根结点为空返回
+		if(root==null) return;
+		//利用队列来存储结点，达到层序遍历的目的
+		Queue<BinaryNode> queue=new LinkedList<BinaryNode>();
+		//根结点加入队列
+		queue.add(root);
+		//如果队列不为空，循环
+		while(!queue.isEmpty()){
+			//队列头元素出列，并输出
+			BinaryNode current=queue.poll();
+			System.out.print(current.data+"\t");
+			//该元素的左孩子结点不为空，则从队尾加入
+			if(current.left!=null)
+				queue.add(current.left);
+			//该元素的右孩子结点不为空，则从队尾加入
+			if(current.right!=null)
+				queue.add(current.right);
+		}
+	 
+	}
 }
