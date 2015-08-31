@@ -1,6 +1,9 @@
 package test.ds.tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
+
 
 public class BinarySortTree {
 	BinaryNode root;
@@ -176,5 +179,22 @@ public class BinarySortTree {
 		}
 		System.out.println();
 	}
-
+	
+	public void layerTraverse(){
+		this.layerTraverse(root);
+	}
+	public void layerTraverse(BinaryNode root){
+		if(root==null) return;
+		Queue<BinaryNode> queue=new LinkedList<BinaryNode>();
+		queue.add(root);
+		while(!queue.isEmpty()){
+			BinaryNode current=queue.poll();
+			System.out.print(current.data+"\t");
+			if(current.left!=null)
+				queue.add(current.left);
+			if(current.right!=null)
+				queue.add(current.right);
+		}
+	 
+	}
 }

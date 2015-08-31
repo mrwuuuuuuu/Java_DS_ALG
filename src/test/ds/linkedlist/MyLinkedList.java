@@ -101,6 +101,7 @@ public class MyLinkedList {
 		return head;
 	}
 
+
 	public void printList() {
 		Node tmp = head;
 		while (tmp != null) {
@@ -208,5 +209,4 @@ public class MyLinkedList {
 		}
 		return slow;
 	}
-
 }

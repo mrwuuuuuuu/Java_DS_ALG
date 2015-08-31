@@ -1,5 +1,11 @@
 package test.ds.stack_queue;
 
+/**用两个队列模拟栈
+ * 入栈：
+ * 出栈：
+ * @author lenovo
+ *
+ */
 public class MyStackByTwoQueue {
 	MyQueue_Linkedlist q1=new MyQueue_Linkedlist();
 	MyQueue_Linkedlist q2=new MyQueue_Linkedlist();

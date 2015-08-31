@@ -1,8 +1,8 @@
 package test.ds.stack_queue;
 
+
 /**8.2.5如何使用连个栈模拟队列
  * @author lenovo
- *
  */
 public class MyQueueByTwoStack {
 	private MyStack_Linkedlist s1=new MyStack_Linkedlist();

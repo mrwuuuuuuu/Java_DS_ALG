@@ -20,6 +20,8 @@ public class BinaryNode {
 	}
 	
 	public BinaryNode(int data){
-		this(null,data,null);
+		this.data=data;
+		this.left=null;
+		this.right=null;
 	}
 }

@@ -27,7 +27,6 @@ public class MyQueue_Array {
 		System.arraycopy(queue, 1, queue, 0, queue.length-1);
 		size--;
 		return obj;
-		
 	}
 	
 	private void ensureCapacity(int n){

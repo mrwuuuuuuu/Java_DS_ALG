@@ -16,7 +16,6 @@ public class MyStack_Linkedlist {
 			return top.data;
 		}
 		return null;
-		
 	}
 	
 	public Object pop(){

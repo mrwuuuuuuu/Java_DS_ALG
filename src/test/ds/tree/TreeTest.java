@@ -24,6 +24,11 @@ public class TreeTest {
 		sortTree.postOrder();
 		System.out.print("éé€’å½’åï¼š");
 		sortTree.postTraverse();
+		
+		System.out.print("²ãĞò±éÀú£º");
+		sortTree.layerTraverse();
+		
+		
 	}
 
 }
