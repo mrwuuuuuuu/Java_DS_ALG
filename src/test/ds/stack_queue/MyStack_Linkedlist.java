@@ -1,6 +1,6 @@
 package test.ds.stack_queue;
 
-/**用单链表实现栈，插入和删除都在表头进行，top始终指向表头
+/**鐢ㄥ崟閾捐〃瀹炵幇鏍堬紝鎻掑叆鍜屽垹闄ら兘鍦ㄨ〃澶磋繘琛岋紝top濮嬬粓鎸囧悜琛ㄥご
  * @author lenovo
  *
  */

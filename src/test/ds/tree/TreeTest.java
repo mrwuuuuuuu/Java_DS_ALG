@@ -8,21 +8,21 @@ public class TreeTest {
 		
 		sortTree.buildTree(arr);
 		
-		System.out.print("Ç°Ğò±éÀú£º");
+		System.out.print("å‰åºéå†ï¼š");
 		sortTree.preOrder();
-		System.out.print("·Çµİ¹éÇ°£º");
+		System.out.print("éé€’å½’å‰ï¼š");
 		sortTree.preTraverse();
 		System.out.println();
 		
-		System.out.print("ÖĞĞò±éÀú£º");
+		System.out.print("ä¸­åºéå†ï¼š");
 		sortTree.inOrder();
-		System.out.print("·Çµİ¹éÖĞ£º");
+		System.out.print("éé€’å½’ä¸­ï¼š");
 		sortTree.inTraverse();
 		System.out.println();
 		
-		System.out.print("ºóĞò±éÀú£º");
+		System.out.print("ååºéå†ï¼š");
 		sortTree.postOrder();
-		System.out.print("·Çµİ¹éºó£º");
+		System.out.print("éé€’å½’åï¼š");
 		sortTree.postTraverse();
 	}
 

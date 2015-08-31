@@ -1,27 +1,27 @@
 package test.ds.sort;
 
-/**Ã°ÅÝÅÅÐò»ù±¾Ë¼Ïë£º</br>
- * ±È½ÏÏàÁÚÁ½¸öÔªËØµÄ´óÐ¡£¬Èç¹û·´Ðò£¬Ôò½»»»¡£</br>
- * Èô°´ÉýÐòÅÅÁÐ£¬Ã¿Ò»ÌË±»É¨ÃèµÄÊý¾ÝÐòÁÐÖÐµÄ×î´óÔªËØ½»»»µ½×îºóµÄÎ»ÖÃ¡£</br>
+/**å†’æ³¡æŽ’åºåŸºæœ¬æ€æƒ³ï¼š</br>
+ * æ¯”è¾ƒç›¸é‚»ä¸¤ä¸ªå…ƒç´ çš„å¤§å°ï¼Œå¦‚æžœååºï¼Œåˆ™äº¤æ¢ã€‚</br>
+ * è‹¥æŒ‰å‡åºæŽ’åˆ—ï¼Œæ¯ä¸€è¶Ÿè¢«æ‰«æçš„æ•°æ®åºåˆ—ä¸­çš„æœ€å¤§å…ƒç´ äº¤æ¢åˆ°æœ€åŽçš„ä½ç½®ã€‚</br>
  * @author Vincent
  */
 public class BubbleSort {
 	/**
-	 * Ã°ÅÝÅÅÐòµÄ²½Öè£º</br>
-	 * 1¡¢ÍâÑ­»·´ÓÊý×éµÄÄ©Î²¿ªÊ¼±éÀú£¬Ã¿´Î±éÀúÐòÁÐÖÐ×î´óµÄÊýÖÃÓÚÊý×éÎ²¶Ë</br>
-	 * 2¡¢ÄÚÑ­»·´ÓÊý×éµÄÍ·²¿¿ªÊ¼±éÀúµ½ÍâÑ­»·±êÖ¾Î»i½áÊø</br>
-	 * 3¡¢ÄÚÑ­»·ÖÐµ±Ç°±éÀúµÄÊý¾ÝºÍºóÒ»Î»Êý¾Ý·´ÐòÔò½»»»</br>
-	 * 4¡¢Ã¿Ò»´ÎÄÚÑ­»·½áÊø£¬µ±Ç°ÐòÁÐÖÐ×î´óÔªËØ±»ÖÁÓÚÊý×éÄ©Î²</br>
+	 * å†’æ³¡æŽ’åºçš„æ­¥éª¤ï¼š</br>
+	 * 1ã€å¤–å¾ªçŽ¯ä»Žæ•°ç»„çš„æœ«å°¾å¼€å§‹éåŽ†ï¼Œæ¯æ¬¡éåŽ†åºåˆ—ä¸­æœ€å¤§çš„æ•°ç½®äºŽæ•°ç»„å°¾ç«¯</br>
+	 * 2ã€å†…å¾ªçŽ¯ä»Žæ•°ç»„çš„å¤´éƒ¨å¼€å§‹éåŽ†åˆ°å¤–å¾ªçŽ¯æ ‡å¿—ä½iç»“æŸ</br>
+	 * 3ã€å†…å¾ªçŽ¯ä¸­å½“å‰éåŽ†çš„æ•°æ®å’ŒåŽä¸€ä½æ•°æ®ååºåˆ™äº¤æ¢</br>
+	 * 4ã€æ¯ä¸€æ¬¡å†…å¾ªçŽ¯ç»“æŸï¼Œå½“å‰åºåˆ—ä¸­æœ€å¤§å…ƒç´ è¢«è‡³äºŽæ•°ç»„æœ«å°¾</br>
 	 * @param arr
 	 * @return
 	 */
 	public static int[] bubbleSort01(int[] arr){
-		//ÍâÑ­»·´ÓÎ²µ½Í·£¬Ã¿´ÎÑ­»·ÐòÁÐÖÐ×î´óÔªËØ±»Å×µ½×îºóÎ»ÖÃ
+		//å¤–å¾ªçŽ¯ä»Žå°¾åˆ°å¤´ï¼Œæ¯æ¬¡å¾ªçŽ¯åºåˆ—ä¸­æœ€å¤§å…ƒç´ è¢«æŠ›åˆ°æœ€åŽä½ç½®
 		for(int i=arr.length-1;i>0;i--){
-			//ÄÚÑ­»·´ÓÍ·µ½i½áÊø£¬Èç¹ûarr[j]>arr[j+1]£¬Ôò½«½Ï´óµÄÊý·ÅÔÚºóÃæ
+			//å†…å¾ªçŽ¯ä»Žå¤´åˆ°iç»“æŸï¼Œå¦‚æžœarr[j]>arr[j+1]ï¼Œåˆ™å°†è¾ƒå¤§çš„æ•°æ”¾åœ¨åŽé¢
 			for(int j=0;j<i;j++){
 				if(arr[j]>arr[j+1]){
-					//½»»»
+					//äº¤æ¢
 					int temp=arr[j];
 					arr[j]=arr[j+1];
 					arr[j+1]=temp;
@@ -32,14 +32,14 @@ public class BubbleSort {
 		return arr;
 	}
 	
-	/**ÉèÖÃ½»»»±êÊ¶¿ÉÒÔ¼õÉÙÎÞÎ½µÄ±éÀú
+	/**è®¾ç½®äº¤æ¢æ ‡è¯†å¯ä»¥å‡å°‘æ— è°“çš„éåŽ†
 	 * @param arr
 	 * @return
 	 */
 	public static int[] bubbleSort02(int[] arr){
-		//ÉèÖÃ½»»»±êÊ¶
+		//è®¾ç½®äº¤æ¢æ ‡è¯†
 		boolean flag=true;
-		//Èç¹ûÉÏÒ»´Î±éÀúÃ»ÓÐ·¢ÉúÊý¾Ý½»»»£¬Ôò±íÊ¾µ±Ç°Êý¾ÝÐòÁÐÓÐÐò
+		//å¦‚æžœä¸Šä¸€æ¬¡éåŽ†æ²¡æœ‰å‘ç”Ÿæ•°æ®äº¤æ¢ï¼Œåˆ™è¡¨ç¤ºå½“å‰æ•°æ®åºåˆ—æœ‰åº
 		for(int i=arr.length-1;i>0&&flag;i--){
 			flag=false;
 			for(int j=0;j<i;j++){
@@ -50,7 +50,7 @@ public class BubbleSort {
 					flag=true;
 				}
 			}
-			System.out.print("µÚ"+(arr.length-i)+"´ÎÅÅÐò£º");
+			System.out.print("ç¬¬"+(arr.length-i)+"æ¬¡æŽ’åºï¼š");
 			for(int x:arr){
 				System.out.print(x+"\t");
 			}

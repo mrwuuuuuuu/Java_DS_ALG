@@ -9,27 +9,27 @@ public class BinarySortTree {
 		root=null;
 	}
 	
-	/**Ïò¶ş²æÅÅĞòÊ÷ÖĞ²åÈëĞÂµÄ½áµã
+	/**å‘äºŒå‰æ’åºæ ‘ä¸­æ’å…¥æ–°çš„ç»“ç‚¹
 	 * @param data
 	 */
 	public void insert(int data){
-		BinaryNode newNode=new BinaryNode(data);//ĞÂ½¨½áµã
+		BinaryNode newNode=new BinaryNode(data);//æ–°å»ºç»“ç‚¹
 		
-		if(root==null){//Èç¹û¸ù½áµãÎª¿Õ£¬ÔòĞÂ½¨µÄ½áµãÎª¸ù½áµã
+		if(root==null){//å¦‚æœæ ¹ç»“ç‚¹ä¸ºç©ºï¼Œåˆ™æ–°å»ºçš„ç»“ç‚¹ä¸ºæ ¹ç»“ç‚¹
 			root=newNode;
 			return;
 		}
 		
-		BinaryNode current=root;//µ±Ç°½áµãÖ¸Ïò¸ù½áµã
-		BinaryNode parent;//Ö¸¶¨¸¸½áµã
+		BinaryNode current=root;//å½“å‰ç»“ç‚¹æŒ‡å‘æ ¹ç»“ç‚¹
+		BinaryNode parent;//æŒ‡å®šçˆ¶ç»“ç‚¹
 		
-		while(true){//Ñ­»·£¬ÕÒ³öĞÂ½áµãµÄºÏÊÊÎ»ÖÃ
-			parent=current;//¸¸½áµãÖ¸Ïòµ±Ç°½áµã
+		while(true){//å¾ªç¯ï¼Œæ‰¾å‡ºæ–°ç»“ç‚¹çš„åˆé€‚ä½ç½®
+			parent=current;//çˆ¶ç»“ç‚¹æŒ‡å‘å½“å‰ç»“ç‚¹
 			
-			if(data<current.data){//Èç¹û²åÈë½áµãµÄÖµĞ¡ÓÚµ±Ç°½áµãµÄÖµ
-				current=parent.left;//µ±Ç°½áµãÖ¸Ïò¸¸½áµãµÄ×ó½áµã
-				if(current==null){//Èç¹ûµ±Ç°½áµãÎª¿Õ
-					parent.left=newNode;//¸¸½áµãµÄ×ó½ÚµãÎªµ±Ç°²åÈëµÄĞÂ½áµã
+			if(data<current.data){//å¦‚æœæ’å…¥ç»“ç‚¹çš„å€¼å°äºå½“å‰ç»“ç‚¹çš„å€¼
+				current=parent.left;//å½“å‰ç»“ç‚¹æŒ‡å‘çˆ¶ç»“ç‚¹çš„å·¦ç»“ç‚¹
+				if(current==null){//å¦‚æœå½“å‰ç»“ç‚¹ä¸ºç©º
+					parent.left=newNode;//çˆ¶ç»“ç‚¹çš„å·¦èŠ‚ç‚¹ä¸ºå½“å‰æ’å…¥çš„æ–°ç»“ç‚¹
 					return;
 				}
 			}else {
@@ -42,7 +42,7 @@ public class BinarySortTree {
 		}
 	}
 	
-	/**¸ù¾İÒ»×é¸ø¶¨ÖµĞÂ½¨¶ş²æÅÅĞòÊı
+	/**æ ¹æ®ä¸€ç»„ç»™å®šå€¼æ–°å»ºäºŒå‰æ’åºæ•°
 	 * @param arr
 	 */
 	public void buildTree(int[] arr){
@@ -60,7 +60,7 @@ public class BinarySortTree {
 		}
 	}
 	
-	/**µİ¹éÇ°Ğò±éÀú
+	/**é€’å½’å‰åºéå†
 	 * @param localRoot
 	 */
 	public void preOrder(){
@@ -69,21 +69,21 @@ public class BinarySortTree {
 	}
 	
 	/**
-	 * ·Çµİ¹éÇ°Ğò±éÀú
+	 * éé€’å½’å‰åºéå†
 	 */
 	public void preTraverse(){
 		Stack<BinaryNode> stack =new Stack<BinaryNode> ();
 		
-		BinaryNode current=this.root;//³õÊ¼Ê±£¬Ö¸Ïò¸ù½áµã
+		BinaryNode current=this.root;//åˆå§‹æ—¶ï¼ŒæŒ‡å‘æ ¹ç»“ç‚¹
 		
-		while(current!=null||!stack.isEmpty()){//µ±Ç°½áµã²»Îª¿Õ£¬»òÕßÕ»²»Îª¿Õ
+		while(current!=null||!stack.isEmpty()){//å½“å‰ç»“ç‚¹ä¸ä¸ºç©ºï¼Œæˆ–è€…æ ˆä¸ä¸ºç©º
 			if(current!=null){
-				System.out.print(current.data+"\t");//µ±Ç°½áµã²»Îª¿Õ£¬Êä³öµ±Ç°½áµãÖµ
-				stack.push(current);//½Ó×Åµ±Ç°½áµãÈëÕ»
-				current=current.left;//½øÈë×ó×ÓÊ÷
+				System.out.print(current.data+"\t");//å½“å‰ç»“ç‚¹ä¸ä¸ºç©ºï¼Œè¾“å‡ºå½“å‰ç»“ç‚¹å€¼
+				stack.push(current);//æ¥ç€å½“å‰ç»“ç‚¹å…¥æ ˆ
+				current=current.left;//è¿›å…¥å·¦å­æ ‘
 			}else {
-				current=stack.pop();//Èç¹ûµ±Ç°½áµãÎª¿Õ£¬µ¯³öÕ»¶¥ÔªËØ
-				current=current.right;//½øÈëÓÒ×ÓÊ÷
+				current=stack.pop();//å¦‚æœå½“å‰ç»“ç‚¹ä¸ºç©ºï¼Œå¼¹å‡ºæ ˆé¡¶å…ƒç´ 
+				current=current.right;//è¿›å…¥å³å­æ ‘
 			}
 		}
 		System.out.println();
@@ -98,7 +98,7 @@ public class BinarySortTree {
 		}
 	}
 	
-	/**µİ¹éÖĞĞò±éÀú
+	/**é€’å½’ä¸­åºéå†
 	 * @param localRoot
 	 */
 	public void inOrder(){
@@ -107,7 +107,7 @@ public class BinarySortTree {
 	}
 	
 	/**
-	 * ·Çµİ¹éÖĞĞò±éÀú
+	 * éé€’å½’ä¸­åºéå†
 	 */
 	public void inTraverse(){
 		Stack<BinaryNode> stack=new Stack<BinaryNode>();
@@ -115,12 +115,12 @@ public class BinarySortTree {
 		
 		while(current!=null||!stack.isEmpty()){
 			if(current!=null){
-				stack.push(current);//µ±Ç°½áµã²»Îª¿Õ£¬ÔòÈëÕ»
-				current=current.left;//½øÈë×ó×ÓÊ÷
+				stack.push(current);//å½“å‰ç»“ç‚¹ä¸ä¸ºç©ºï¼Œåˆ™å…¥æ ˆ
+				current=current.left;//è¿›å…¥å·¦å­æ ‘
 			}else {
-				current=stack.pop();//µ±Ç°½áµãÎª¿Õ£¬µ¯³öÕ»¶¥ÔªËØ
-				System.out.print(current.data+"\t");//Êä³öÕ»¶¥ÔªËØ
-				current=current.right;//½øÈëÓÒ×ÓÊ÷
+				current=stack.pop();//å½“å‰ç»“ç‚¹ä¸ºç©ºï¼Œå¼¹å‡ºæ ˆé¡¶å…ƒç´ 
+				System.out.print(current.data+"\t");//è¾“å‡ºæ ˆé¡¶å…ƒç´ 
+				current=current.right;//è¿›å…¥å³å­æ ‘
 			}
 		}
 		System.out.println();
@@ -135,7 +135,7 @@ public class BinarySortTree {
 		}
 	}
 	
-	/**µİ¹éºóĞò±éÀú
+	/**é€’å½’ååºéå†
 	 * @param localRoot
 	 */
 	public void postOrder(){
@@ -144,7 +144,7 @@ public class BinarySortTree {
 	}
 	
 	/**
-	 * ·Çµİ¹éºóĞø±éÀú
+	 * éé€’å½’åç»­éå†
 	 */
 	public void postTraverse(){
 		Stack<BinaryNode> stack=new Stack<BinaryNode>();
@@ -152,22 +152,22 @@ public class BinarySortTree {
 		BinaryNode current=this.root;
 		
 		while(current!=null||!stack.isEmpty()){
-			if(current!=null){//½«¸ù½áµãµÄ×ó½áµãµÄ×ó½áµã¡­¡­´æÈëÕ»
+			if(current!=null){//å°†æ ¹ç»“ç‚¹çš„å·¦ç»“ç‚¹çš„å·¦ç»“ç‚¹â€¦â€¦å­˜å…¥æ ˆ
 				stack.push(current);
 				current=current.left;
 			}else {
-				current=stack.pop();//Èçµ±Ç°½áµãÃ»ÓĞ×ó½áµã£¬Ôòµ¯³öÕ»¶¥ÔªËØ²¢±ê¼ÇÎªµ±Ç°½áµã
-				if(current.flag==1){//µ±Ç°Îª»ØËİ½áµã
+				current=stack.pop();//å¦‚å½“å‰ç»“ç‚¹æ²¡æœ‰å·¦ç»“ç‚¹ï¼Œåˆ™å¼¹å‡ºæ ˆé¡¶å…ƒç´ å¹¶æ ‡è®°ä¸ºå½“å‰ç»“ç‚¹
+				if(current.flag==1){//å½“å‰ä¸ºå›æº¯ç»“ç‚¹
 					System.out.print(current.data+"\t");
-					current.flag=2;//¸Ã½áµãÒÑ±»µ¯³ö
+					current.flag=2;//è¯¥ç»“ç‚¹å·²è¢«å¼¹å‡º
 				}
 				if(current.right!=null&&current.flag==0){
 					stack.push(current);
-					current.flag=1;//±íÊ¾Îª»ØËİ½áµã
+					current.flag=1;//è¡¨ç¤ºä¸ºå›æº¯ç»“ç‚¹
 				}
-				if(current.right==null&&current.flag==0){//µ±Ç°½áµãÓÒ½áµãÎª¿Õ
+				if(current.right==null&&current.flag==0){//å½“å‰ç»“ç‚¹å³ç»“ç‚¹ä¸ºç©º
 					System.out.print(current.data+"\t");
-					current.flag=2;//¸Ã½áµãÒÑ±»µ¯³ö
+					current.flag=2;//è¯¥ç»“ç‚¹å·²è¢«å¼¹å‡º
 				}
 				
 				

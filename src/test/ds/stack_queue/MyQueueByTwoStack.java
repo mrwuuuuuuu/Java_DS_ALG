@@ -1,6 +1,6 @@
 package test.ds.stack_queue;
 
-/**8.2.5ÈçºÎÊ¹ÓÃÁ¬¸öÕ»Ä£Äâ¶ÓÁĞ
+/**8.2.5å¦‚ä½•ä½¿ç”¨è¿ä¸ªæ ˆæ¨¡æ‹Ÿé˜Ÿåˆ—
  * @author lenovo
  *
  */
@@ -8,17 +8,17 @@ public class MyQueueByTwoStack {
 	private MyStack_Linkedlist s1=new MyStack_Linkedlist();
 	private MyStack_Linkedlist s2=new MyStack_Linkedlist();
 	
-	public void put(Object obj){//Èë¶ÓµÄÊı¾İÖ±½Ó½øÈëÕ»s1
+	public void put(Object obj){//å…¥é˜Ÿçš„æ•°æ®ç›´æ¥è¿›å…¥æ ˆs1
 		s1.push(obj);
 	}
 	
 	public Object pop(){
-		if(s2.isEmpty()){//³ö¶ÓÊ±£¬¼ì²éÕ»s2ÊÇ·ñÎª¿Õ
-			while(!s1.isEmpty()){//s2Îª¿ÕÊ±£¬½«s1µÄÊı¾İÈ«²¿µ¯³öÈës2
+		if(s2.isEmpty()){//å‡ºé˜Ÿæ—¶ï¼Œæ£€æŸ¥æ ˆs2æ˜¯å¦ä¸ºç©º
+			while(!s1.isEmpty()){//s2ä¸ºç©ºæ—¶ï¼Œå°†s1çš„æ•°æ®å…¨éƒ¨å¼¹å‡ºå…¥s2
 				s2.push(s1.pop());
 			}
 		}
-		return s2.pop();//²»Îª¿Õ£¬Ö±½Óµ¯³ös2Õ»¶¥ÔªËØ
+		return s2.pop();//ä¸ä¸ºç©ºï¼Œç›´æ¥å¼¹å‡ºs2æ ˆé¡¶å…ƒç´ 
 	}
 	
 	public boolean isEmpty(){

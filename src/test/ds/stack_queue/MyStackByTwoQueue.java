@@ -5,18 +5,18 @@ public class MyStackByTwoQueue {
 	MyQueue_Linkedlist q2=new MyQueue_Linkedlist();
 	
 	public void push(Object obj){
-		q1.put(obj);//Ã¿»ØÊı¾İ´æÈëq1
+		q1.put(obj);//æ¯å›æ•°æ®å­˜å…¥q1
 	}
 	public Object pop(){
-		if(q1.isEmpty()) return null;//Èç¹ûq1Îª¿ÕÔò£¬Ä£ÄâÕ»Îª¿Õ
-		if(q1.size()==1){//Èç¹ûq1»¹ÓĞÒ»¸öÔªËØ£¬Ôò³ö¶ÓÁĞ(Ä£ÄâÕ»ÖĞÖ»ÓĞÒ»¸öÔªËØ)
+		if(q1.isEmpty()) return null;//å¦‚æœq1ä¸ºç©ºåˆ™ï¼Œæ¨¡æ‹Ÿæ ˆä¸ºç©º
+		if(q1.size()==1){//å¦‚æœq1è¿˜æœ‰ä¸€ä¸ªå…ƒç´ ï¼Œåˆ™å‡ºé˜Ÿåˆ—(æ¨¡æ‹Ÿæ ˆä¸­åªæœ‰ä¸€ä¸ªå…ƒç´ )
 			return q1.pop();
 		}else {
-			while(q1.size()!=1){//q1ÖĞÔªËØ¸öÊı²»Îª1£¬Ôò½«q1ÖĞÁôÒ»¸öÔªËØ£¬ÆäËüÔªËØÈë¶ÓÁĞq2
+			while(q1.size()!=1){//q1ä¸­å…ƒç´ ä¸ªæ•°ä¸ä¸º1ï¼Œåˆ™å°†q1ä¸­ç•™ä¸€ä¸ªå…ƒç´ ï¼Œå…¶å®ƒå…ƒç´ å…¥é˜Ÿåˆ—q2
 				q2.put(q1.pop());
 			}
 			while(!q2.isEmpty()){
-				q1.put(q2.pop());//ÔÙ½«¶ÓÁĞq2ÖĞÔªËØÈë¶ÓÁĞq1
+				q1.put(q2.pop());//å†å°†é˜Ÿåˆ—q2ä¸­å…ƒç´ å…¥é˜Ÿåˆ—q1
 			}
 			return q1.pop();
 		}

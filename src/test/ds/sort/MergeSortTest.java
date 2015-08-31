@@ -1,56 +1,56 @@
 package test.ds.sort;
 /**
- * ¹é²¢ÅÅĞòµÄ»ù±¾Ë¼Ïë£º</br>
- * ÀûÓÃµİ¹éÓë·ÖÖÎ¼¼Êõ½«Êı¾İĞòÁĞ»®·Ö³ÉÎªÔ½À´Ô½Ğ¡µÄ°ë×Ó±í£¬</br>
- * ×îºóÔÚÓÃµİ¹é·½·¨½«ÅÅºÃĞòµÄ°ë×Ó±íºÏ²¢³ÉÎªÔ½À´Ô½´óµÄÓĞĞòĞòÁĞ¡£</br>
+ * å½’å¹¶æ’åºçš„åŸºæœ¬æ€æƒ³ï¼š</br>
+ * åˆ©ç”¨é€’å½’ä¸åˆ†æ²»æŠ€æœ¯å°†æ•°æ®åºåˆ—åˆ’åˆ†æˆä¸ºè¶Šæ¥è¶Šå°çš„åŠå­è¡¨ï¼Œ</br>
+ * æœ€ååœ¨ç”¨é€’å½’æ–¹æ³•å°†æ’å¥½åºçš„åŠå­è¡¨åˆå¹¶æˆä¸ºè¶Šæ¥è¶Šå¤§çš„æœ‰åºåºåˆ—ã€‚</br>
  * @author Vincent
  */
 public class MergeSortTest {
-	/**ºÏ²¢×óÓÒÊı×é
+	/**åˆå¹¶å·¦å³æ•°ç»„
 	 * @param arr
 	 * @param low
 	 * @param mid
 	 * @param high
 	 */
 	private static void mergeArray(int[] arr,int low,int mid,int high){
-		int al=mid-low+1;//×óÊı×éÔªËØ¸öÊı
-		int ar=high-mid;//ÓÒÊı×éÔªËØ¸öÊı
+		int al=mid-low+1;//å·¦æ•°ç»„å…ƒç´ ä¸ªæ•°
+		int ar=high-mid;//å³æ•°ç»„å…ƒç´ ä¸ªæ•°
 		
-		//ĞÂ½¨×óÓÒÊı×é
+		//æ–°å»ºå·¦å³æ•°ç»„
 		int[] AL=new int[al];
 		int[] AR=new int[ar];
 		
-		//½«Ô­Êı×éÖĞµÄÔªËØ·Ö±ğ¸³¸ø×óÓÒĞÂÊı×é
-		 for(int i=0,k=low;i<al;i++,k++){//×óÊı×é´Ólow¿ªÊ¼
+		//å°†åŸæ•°ç»„ä¸­çš„å…ƒç´ åˆ†åˆ«èµ‹ç»™å·¦å³æ–°æ•°ç»„
+		 for(int i=0,k=low;i<al;i++,k++){//å·¦æ•°ç»„ä»lowå¼€å§‹
 			 AL[i]=arr[k];
 		 }
-		 for(int j=0,k=mid+1;j<ar;j++,k++){//ÓÒÊı×é´Ómid+1¿ªÊ¼
+		 for(int j=0,k=mid+1;j<ar;j++,k++){//å³æ•°ç»„ä»mid+1å¼€å§‹
 			 AR[j]=arr[k];
 		 }
 		 
 		 int l=0,r=0,a=low;
 		 
-		 //·Ö±ğ±éÀú×óÓÒÊı×é£¬½øĞĞºÏ²¢
+		 //åˆ†åˆ«éå†å·¦å³æ•°ç»„ï¼Œè¿›è¡Œåˆå¹¶
 		 while(l<al&&r<ar){
 			 if(AL[l]<=AR[r])
-				 arr[a++]=AL[l++];//Ô­Êı×éµÄÏÂ±êÃ¿´Î´Ólow¿ªÊ¼
+				 arr[a++]=AL[l++];//åŸæ•°ç»„çš„ä¸‹æ ‡æ¯æ¬¡ä»lowå¼€å§‹
 			 else
 				 arr[a++]=AR[r++];
 		 }
 		 
-		 //½«×ó/ÓÒÊı×éÖĞÃ»ÓĞºÏ²¢µÄÔªËØ¼ÓÈëÔ­Êı×é
+		 //å°†å·¦/å³æ•°ç»„ä¸­æ²¡æœ‰åˆå¹¶çš„å…ƒç´ åŠ å…¥åŸæ•°ç»„
 		 while(l<al) arr[a++]=AL[l++];
 		 while(r<ar)  arr[a++]=AR[r++];
 	}
 	
-	/**µİ¹éµ÷ÓÃmergeSort·½·¨£¬»®·ÖÔ­Êı×é£¬Ö±µ½low<high²»³ÉÁ¢Î»ÖÃ
+	/**é€’å½’è°ƒç”¨mergeSortæ–¹æ³•ï¼Œåˆ’åˆ†åŸæ•°ç»„ï¼Œç›´åˆ°low<highä¸æˆç«‹ä½ç½®
 	 * @param arr
 	 * @param low
 	 * @param high
 	 * @return
 	 */
 	public static int[] mergeSort(int[] arr,int low,int high){
-		//µİ¹é»®·ÖĞòÁĞ
+		//é€’å½’åˆ’åˆ†åºåˆ—
 		int mid=(low+high)/2;
 		if(low<high){
 			mergeSort(arr, low, mid);

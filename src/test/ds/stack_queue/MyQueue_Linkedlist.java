@@ -1,30 +1,30 @@
 package test.ds.stack_queue;
 
 /**
- * ÓÃµ¥Á´±íÊµÏÖ¶ÓÁĞ£¬ĞèÒªÖ¸¶¨Í·½áµãºÍÎ²½áµã¡£</br> ´ÓÎ²²¿Ìí¼ÓĞÂ½áµã£¬´ÓÍ·²¿µ¯³ö½áµã¡£</br>
+ * ç”¨å•é“¾è¡¨å®ç°é˜Ÿåˆ—ï¼Œéœ€è¦æŒ‡å®šå¤´ç»“ç‚¹å’Œå°¾ç»“ç‚¹ã€‚</br> ä»å°¾éƒ¨æ·»åŠ æ–°ç»“ç‚¹ï¼Œä»å¤´éƒ¨å¼¹å‡ºç»“ç‚¹ã€‚</br>
  * 
  * @author lenovo
  * 
  */
 public class MyQueue_Linkedlist {
-	private Node head=null ;//Ö¸¶¨Í·½áµã
-	private Node tail=null ;//Ö¸¶¨Î²½áµã
+	private Node head=null ;//æŒ‡å®šå¤´ç»“ç‚¹
+	private Node tail=null ;//æŒ‡å®šå°¾ç»“ç‚¹
 
 	public boolean isEmpty() {
-		return this.head==null&&this.tail==null;//µ±Í·½áµãµÈÓÚÎ²½áµãÊ±£¬±íÃ÷¶ÓÁĞÎª¿Õ
+		return this.head==null&&this.tail==null;//å½“å¤´ç»“ç‚¹ç­‰äºå°¾ç»“ç‚¹æ—¶ï¼Œè¡¨æ˜é˜Ÿåˆ—ä¸ºç©º
 	}
 
 	public void put(Object obj) {
 		Node newNode = new Node(obj);
-		if (!isEmpty()) { // Èç¹û¶ÓÁĞÎª¿Õ
+		if (!isEmpty()) { // å¦‚æœé˜Ÿåˆ—ä¸ºç©º
 			tail.next = newNode;
-		} else {// ²»Îª¿Õ£¬ÔÚÎ²²¿²åÈë
+		} else {// ä¸ä¸ºç©ºï¼Œåœ¨å°¾éƒ¨æ’å…¥
 			head=newNode;
 		}
 		tail=newNode;
 	}
 
-	/**´ÓÁ´±íÍ·¿ªÊ¼³ö¶ÓÁĞ
+	/**ä»é“¾è¡¨å¤´å¼€å§‹å‡ºé˜Ÿåˆ—
 	 * @return
 	 */
 	public Object pop() {

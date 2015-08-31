@@ -2,11 +2,11 @@ package test.ds.stack_queue;
 
 public class MyStack_Array {
 
-	private Object[] stack;//³õÊ¼»¯Ò»¸öÊı×éÓÃÀ´Ä£ÄâÕ»
-	private int size;//Õ»ÄÚÔªËØµÄ´óĞ¡
+	private Object[] stack;//åˆå§‹åŒ–ä¸€ä¸ªæ•°ç»„ç”¨æ¥æ¨¡æ‹Ÿæ ˆ
+	private int size;//æ ˆå†…å…ƒç´ çš„å¤§å°
 
 	public MyStack_Array() {
-		stack = new Object[10];//¹¹ÔìÆ÷Àà³õÊ¼»¯Êı×é
+		stack = new Object[10];//æ„é€ å™¨ç±»åˆå§‹åŒ–æ•°ç»„
 	}
 
 	public int size() {
@@ -17,22 +17,22 @@ public class MyStack_Array {
 		return size == 0;
 	}
 
-	public Object peek() {//·µ»ØÕ»¶¥ÔªËØ£¬²»É¾³ı
+	public Object peek() {//è¿”å›æ ˆé¡¶å…ƒç´ ï¼Œä¸åˆ é™¤
 		if (!isEmpty()) {
 			return stack[size - 1];
 		}
 		return null;
 	}
 
-	public Object pop(){//·µ»ØÕ»¶¥ÔªËØ£¬²¢É¾³ı
+	public Object pop(){//è¿”å›æ ˆé¡¶å…ƒç´ ï¼Œå¹¶åˆ é™¤
 		Object obj=peek();
-		stack[size-1]=null;//É¾³ı
+		stack[size-1]=null;//åˆ é™¤
 		size--;
 		return obj;
 	}
 
 	public boolean push(Object obj) {
-		ensureCapacity(size+1);//À©Èİ
+		ensureCapacity(size+1);//æ‰©å®¹
 		stack[size++]=obj;
 		return true;
 	}
@@ -40,9 +40,9 @@ public class MyStack_Array {
 	private void ensureCapacity(int size) {
 		int len=stack.length;
 		if(size>len){
-			Object[] newStack=new Object[stack.length*2];//ĞÂµÄÊı×éÎªÔ­À´Êı×éÈİÁ¿µÄÁ½±¶
-			System.arraycopy(stack, 0, newStack, 0, stack.length);//½«Ô­À´µÄÊı×é¿½±´¸øĞÂÊı×é
-			stack=newStack;//Ô­Êı×éµÄÒıÓÃÖ¸ÏòĞÂÊı×é
+			Object[] newStack=new Object[stack.length*2];//æ–°çš„æ•°ç»„ä¸ºåŸæ¥æ•°ç»„å®¹é‡çš„ä¸¤å€
+			System.arraycopy(stack, 0, newStack, 0, stack.length);//å°†åŸæ¥çš„æ•°ç»„æ‹·è´ç»™æ–°æ•°ç»„
+			stack=newStack;//åŸæ•°ç»„çš„å¼•ç”¨æŒ‡å‘æ–°æ•°ç»„
 		}
 	}
 
