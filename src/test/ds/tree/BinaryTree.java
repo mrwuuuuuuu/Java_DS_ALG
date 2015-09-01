@@ -7,7 +7,7 @@ public class BinaryTree {
 	}
 	
 	/**
-	 * ¸ù¾İÏÈĞò±éÀúºÍºóĞò±éÀúÖØ¹¹¶ş²æÊ÷
+	 * æ ¹æ®å…ˆåºéå†å’Œååºéå†é‡æ„äºŒå‰æ ‘
 	 */
 	public void initTree(int[] preOrder,int[] inOrder){
 		this.root=initTree(preOrder, 0, preOrder.length-1, inOrder, 0, inOrder.length-1);
@@ -16,27 +16,27 @@ public class BinaryTree {
 	public BinaryNode initTree(int[] preOrder,int start1,int end1,int[] inOrder,int start2,int end2){
 		if(start1>end1||start2>end2) return null;
 		
-		//È·¶¨¸ù½áµãµÄÖµ
+		//ç¡®å®šæ ¹ç»“ç‚¹çš„å€¼
 		int rootData=preOrder[start1];
-		//ĞÂ½¨¸ù½áµã
+		//æ–°å»ºæ ¹ç»“ç‚¹
 		BinaryNode root=new BinaryNode(rootData);
 		
-		//ÔÚÖĞĞò±éÀúÖĞÕÒ³ö¸ù½áµãµÄÎ»ÖÃ£¬»®·Ö×óÓÒ×ÓÊ÷
+		//åœ¨ä¸­åºéå†ä¸­æ‰¾å‡ºæ ¹ç»“ç‚¹çš„ä½ç½®ï¼Œåˆ’åˆ†å·¦å³å­æ ‘
 		int rootIndex=findIndexInArray(inOrder, rootData, start2, end2);
 		
-		//offSet±íÊ¾¸ù½áµãµÄ×ó×ÓÊ÷½áµã¸öÊı
+		//offSetè¡¨ç¤ºæ ¹ç»“ç‚¹çš„å·¦å­æ ‘ç»“ç‚¹ä¸ªæ•°
 		int offSet=rootIndex-start2-1;
 		
-		//µİ¹é¹¹½¨×ó×ÓÊ÷
+		//é€’å½’æ„å»ºå·¦å­æ ‘
 		BinaryNode left=initTree(preOrder, start1+1,start1+1+offSet, inOrder, start2, start2+offSet);
-		//µİ¹é¹¹½¨ÓÒ×ÓÊ÷
+		//é€’å½’æ„å»ºå³å­æ ‘
 		BinaryNode right=initTree(preOrder, start1+offSet+2, end1, inOrder, rootIndex+1, end2);
 		
 		root.left=left;
 		root.right=right;
 		return root;
 	}
-	//ÕÒµ½dataÔÚArrayÊı×éÖĞµÄÎ»ÖÃ
+	//æ‰¾åˆ°dataåœ¨Arrayæ•°ç»„ä¸­çš„ä½ç½®
 	private int findIndexInArray(int[] array,int data,int start,int end){
 		for(int i=start;i<=end;i++){
 			if(array[i]==data) return i;
@@ -52,7 +52,7 @@ public class BinaryTree {
 		}
 	}
 	
-	/**µİ¹éºóĞò±éÀú
+	/**é€’å½’ååºéå†
 	 * @param localRoot
 	 */
 	public void postOrder(){
