@@ -10,32 +10,32 @@ public class Josephus {
         Scanner scanner = new Scanner(System.in);  
         System.out.print("请输入总人数：");  
         int totalNum = scanner.nextInt();  
+        System.out.print("请输入从谁开始报数：");
+        int start=scanner.nextInt();
         System.out.print("请输入报数的大小：");  
         int cycleNum = scanner.nextInt();  
-        yuesefu(totalNum, cycleNum);  
+        yuesefu(totalNum,start,cycleNum);  
     }  
   
-   public static void yuesefu(int totalNum, int countNum) {  
-        // 初始化人数  
-        List<Integer> start = new ArrayList<Integer>();  
+   public static void yuesefu(int totalNum, int start,int countNum) {  
+        List<Integer> list = new ArrayList<Integer>();  
         for (int i = 1; i <= totalNum; i++) {  
-            start.add(i);  
+        	list.add(i);  
         }  
-        //从第K个开始计数  
-        int k = 0;  
-        while (start.size() >0) {  
-            k = k + countNum;  
-            //第m人的索引位置  
-            k = k % (start.size()) - 1;  
+       
+        int k = start-1;   //k表示索引下标
+        while (list.size() >0) {  
+            k = k + countNum; 
+            k = k % (list.size()) - 1; //索引的位置需要减1
            // 判断是否到队尾  
             if (k < 0) {  
-                System.out.println(start.get(start.size()-1));  
-                start.remove(start.size() - 1);  
+                System.out.print(list.get(list.size()-1)+" ");  
+                list.remove(list.size() - 1);  
                 k = 0;  
             } else {  
-                System.out.println(start.get(k));  
-                start.remove(k);  
+                System.out.print(list.get(k)+" ");  
+                list.remove(k);  
             }  
-        }  
+        }   
     }  
 }
